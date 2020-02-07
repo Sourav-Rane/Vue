@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Assignment</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    
+    <div id="exercise">
+        <p>My name is {{ name }}</p>
+        <p>And my age is {{ age }}</p>
+        <p>Age * 3 = {{ age * 3 }}</p>
+        <p>A random number btwn 0 and 1 : {{ genRandom() }}</p>
+        <p>Displaying the image below </p>
+
+        <div>
+            <img v-bind:src="imageUrl" height="500px">
+        </div>
+
+        <div>
+            <input type="text" v-bind:value="name">
+        </div>
+    </div>
+
+
+<script>
+    new Vue({
+        el:"#exercise",
+        data:{
+            name:"Sourav",
+            age:44,
+            imageUrl:"https://i.ytimg.com/vi/0WeQngGB2wY/maxresdefault.jpg",
+          
+        },
+        methods: {
+            genRandom: function(){
+                return Math.random();
+            },
+           
+        }
+
+    })
+</script>
+
+</body>
+</html>

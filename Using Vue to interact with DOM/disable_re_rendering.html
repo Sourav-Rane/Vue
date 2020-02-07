@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>interaction</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    
+    
+    <div id="app">
+        <!-- v-once renders the value only once ! that is only the first value gets rendered only !!  -->
+        <h1 v-once>{{ title }} </h1>
+        <p>{{ sayHello() }} - <a v-bind:href="link"> Google</a></p>
+    </div>
+
+
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                title: " Hello World !",
+                link: 'http://google.com'
+            },
+            methods:{
+                sayHello: function(){
+                    this.title = "hello woman !";
+                    return this.title;
+                }
+            }
+        })
+    </script>
+</body>
+</html>
